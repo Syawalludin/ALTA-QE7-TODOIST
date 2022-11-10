@@ -33,6 +33,12 @@ ProjectsStepDefinitions {
         SerenityRest.then().statusCode(OK);
     }
 
+    @And("Validate get all projects json schema validator")
+    public void validateGetAllProjectsJsonSchemaValidator() {
+        File json = new File(ProjectsAPI.JSON_SCHEMA+"/GetAllProjectsSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
     //Create New Project Positive Case
     @Given("Post create a valid new project")
     public void postCreateAValidNewProject() {
@@ -51,9 +57,50 @@ ProjectsStepDefinitions {
                     .body(ProjectsResponse.NAME,equalTo(name));
     }
 
-    @And("Validate project json schema validator")
-    public void validateProjectJsonSchemaValidator() {
+    @And("Validate create project json schema validator")
+    public void validateCreateProjectJsonSchemaValidator() {
         File json = new File(ProjectsAPI.JSON_SCHEMA+"/CreateNewProjectSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    //Get Project Positive Case
+    @Given("Get project valid id {long}")
+    public void getProjectsValidIdId(long id) {
+        projectsAPI.getProject(id);
+    }
+
+    @When("Send get project request")
+    public void sendGetProjectRequest() {
+        SerenityRest.when().get(ProjectsAPI.GET_PROJECT);
+    }
+
+    @And("Validate get project json schema validator")
+    public void validateGetProjectJsonSchemaValidator() {
+        File json = new File(ProjectsAPI.JSON_SCHEMA+"/GetProjectSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+
+    @Given("Post update project valid id {long}")
+    public void postUpdateProjectWithValidJsonId(long id) {
+        File json = new File(ProjectsAPI.JSON_REQ_BODY+"/UpdateProject.json");
+        projectsAPI.updateProject(id, json);
+    }
+
+    @When("Send post update project request")
+    public void sendPostUpdateProjectRequest() {
+        SerenityRest.when().post(ProjectsAPI.UPDATE_PROJECT);
+    }
+
+    @And("Response update project body should contain name {string}")
+    public void responseUpdateProjectBodyShouldContainName(String name) {
+        SerenityRest.then()
+                .body(ProjectsResponse.NAME,equalTo(name));
+    }
+
+    @And("Validate post update project json schema validator")
+    public void validatePostUpdateProjectJsonSchemaValidator() {
+        File json = new File(ProjectsAPI.JSON_SCHEMA+"/UpdateProjectSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 }

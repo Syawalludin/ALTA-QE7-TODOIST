@@ -17,7 +17,8 @@ public class ProjectsAPI {
 
     public static final String GET_ALL_PROJECTS = URL+"/rest/v2/projects";
     public static final String CREATE_NEW_PROJECT = URL+"/rest/v2/projects/";
-
+    public static final String GET_PROJECT = URL+"/rest/v2/projects/{id}";
+    public static final String UPDATE_PROJECT = URL+"/rest/v2/projects/{id}";
     //Get All Project Positive Case
     @Step("Get all projects")
     public void getAllProjects() {
@@ -34,4 +35,20 @@ public class ProjectsAPI {
                 .body(json);
     }
 
+    //Get Project Positive Case
+    @Step("Get project")
+    public void getProject(long id) {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer "+BEARER_TOKEN)
+                .pathParam("id",id);
+    }
+
+    @Step("Update project")
+    public void updateProject(long id, File json){
+        SerenityRest.given()
+                .headers("Authorization", "Bearer "+BEARER_TOKEN)
+                .pathParam("id",id)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
 }

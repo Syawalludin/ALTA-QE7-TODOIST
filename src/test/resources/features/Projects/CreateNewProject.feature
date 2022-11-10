@@ -1,4 +1,4 @@
-Feature: Projects Todoist
+Feature: Post Create New Project Todoist
   #PositiveCase
   @Scenario1
   Scenario: Post create new project todoist with json
@@ -6,5 +6,5 @@ Feature: Projects Todoist
     When Send post create project request
     Then Status code is 200 OK
     And Response body should contain name "Groceries"
-    And Validate project json schema validator
+    And Validate create project json schema validator
 
