@@ -1,5 +1,4 @@
 Feature: Projects Todoist
-
   #PositiveCase
   @Scenario1
   Scenario: Get all projects todoist
