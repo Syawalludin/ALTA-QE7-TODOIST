@@ -19,6 +19,8 @@ public class TodoistTaskAPI {
     public static String GET_AN_ACTIVE_TASK = URL + "rest/v1/tasks/{id}";
     public static String UPDATE_A_TASK = URL + "rest/v1/tasks/{id}";
     public static String CLOSE_A_TASK = URL + "rest/v1/tasks/{id}/close";
+    public static String REOPEN_A_TASK = URL + "rest/v1/tasks/{id}/reopen";
+
 
     @Step
     public void setGetActiveTask(){
@@ -49,5 +51,11 @@ public class TodoistTaskAPI {
     public void setCloseATask(long id){
         SerenityRest.given().headers( "Authorization", "Bearer " + BEARER_TOKEN )
                             .pathParam("id", id);
+    }
+
+    @Step
+    public void setReopenATask(long id){
+        SerenityRest.given().headers( "Authorization", "Bearer " + BEARER_TOKEN )
+                .pathParam("id", id);
     }
 }

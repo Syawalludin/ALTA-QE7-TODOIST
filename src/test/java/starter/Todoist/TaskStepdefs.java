@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 
@@ -26,6 +27,12 @@ public class TaskStepdefs {
         SerenityRest.then().statusCode(OK);
     }
 
+    @And("Validate get active task json schema")
+    public void validateGetActiveTasJsonScema() {
+        File json = new File(TodoistTaskAPI.JSON_SCEMA+"/GetActiveTaskJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
 
     //Scenario 2
     @Given("Get list user with file json")
@@ -46,7 +53,13 @@ public class TaskStepdefs {
                            .body(TodoistTaskResponse.PRIORITY, equalTo(proprity));
     }
 
+    @And("Validate Create a new task json schema")
+    public void validateCreateANewTaskJsonSchema() {
+        File json = new File(TodoistTaskAPI.JSON_SCEMA+"/CreateTaskJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
 
+    //Scenario 3
     @Given("Get an active task with {long}")
     public void getAnActiveTaskWithId(long id) {
         todoistTaskAPI.setGetAnActiveTask(id);
@@ -62,6 +75,13 @@ public class TaskStepdefs {
         SerenityRest.then().body(TodoistTaskResponse.ID, equalTo(id));
     }
 
+    @And("Validate Gen an active task json schema")
+    public void validateGenAnActiveTaskJsonSchema() {
+        File json = new File(TodoistTaskAPI.JSON_SCEMA+"/GetAnActiveTaskJsonSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    //Scenario 4
     @Given("Update task with valid json and {long}")
     public void updateTaskWithValidJsonAndId(long id) {
         File json = new File(TodoistTaskAPI.JSON_REG_BODY + "/TaskUpdate.json");
@@ -92,5 +112,26 @@ public class TaskStepdefs {
     @When("Send Close A Task")
     public void sendCloseATask() {
         SerenityRest.when().post(TodoistTaskAPI.CLOSE_A_TASK);
+    }
+
+    @Given("Reopen a task with {long}")
+    public void reopenATaskWithId(long id) {
+        todoistTaskAPI.setCloseATask(id);
+    }
+
+    @When("Send Reopen A Task")
+    public void sendReopenATask() {
+        SerenityRest.when().post(TodoistTaskAPI.REOPEN_A_TASK);
+    }
+
+    @Given("Delete a task with {long}")
+    public void deleteATaskWithId(long id) {
+        todoistTaskAPI.setCloseATask(id);
+
+    }
+
+    @When("Send Delete A task")
+    public void sendDeleteATask() {
+        SerenityRest.when().post(TodoistTaskAPI.REOPEN_A_TASK);
     }
 }
