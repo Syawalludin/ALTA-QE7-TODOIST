@@ -21,3 +21,19 @@ Feature: Task feature
     Examples:
       | id         |
       | 6334890386 |
+
+  Scenario Outline: Update A Task
+    Given Update task with valid json and <id>
+    When Send Update A Task
+    Then Status code should be 204 NoContent
+    Examples:
+      | id         |
+      | 6334890386 |
+
+  Scenario Outline: Close A Task
+    Given Close A task With <id>
+    When Send Close A Task
+    Then Status code should be 204 NoContent
+    Examples:
+      | id         |
+      | 6334890386 |

@@ -16,8 +16,9 @@ public class TodoistTaskAPI {
     public static final String BEARER_TOKEN = "9493ffaa6194d2417c1b364cebb48d9232114a9a";
     public static String GET_ACTIVE_TASK = URL + "rest/v1/tasks";
     public static String CREATE_A_NEW_TASK = URL + "rest/v1/tasks";
-
     public static String GET_AN_ACTIVE_TASK = URL + "rest/v1/tasks/{id}";
+    public static String UPDATE_A_TASK = URL + "rest/v1/tasks/{id}";
+    public static String CLOSE_A_TASK = URL + "rest/v1/tasks/{id}/close";
 
     @Step
     public void setGetActiveTask(){
@@ -35,5 +36,18 @@ public class TodoistTaskAPI {
     public void setGetAnActiveTask(long id){
         SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
                             .pathParam("id", id);
-    };
+    }
+    @Step
+    public void setUpdateATask(long id, File json){
+        SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
+                            .contentType(ContentType.JSON)
+                            .body(json)
+                            .pathParam("id", id);
+
+    }
+    @Step
+    public void setCloseATask(long id){
+        SerenityRest.given().headers( "Authorization", "Bearer " + BEARER_TOKEN )
+                            .pathParam("id", id);
+    }
 }
