@@ -45,4 +45,20 @@ public class TaskStepdefs {
                            .body(TodoistTaskResponse.DATE, equalTo(date))
                            .body(TodoistTaskResponse.PRIORITY, equalTo(proprity));
     }
+
+
+    @Given("Get an active task with {long}")
+    public void getAnActiveTaskWithId(long id) {
+        todoistTaskAPI.setGetAnActiveTask(id);
+    }
+
+    @When("Send Get an active task")
+    public void sendGetAnActiveTask() {
+        SerenityRest.when().get(TodoistTaskAPI.GET_AN_ACTIVE_TASK);
+    }
+
+    @And("Respose body should be {long}")
+    public void resposeBodyShouldBeId(long id) {
+        SerenityRest.then().body(TodoistTaskResponse.ID, equalTo(id));
+    }
 }

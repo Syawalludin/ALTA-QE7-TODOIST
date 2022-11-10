@@ -17,6 +17,8 @@ public class TodoistTaskAPI {
     public static String GET_ACTIVE_TASK = URL + "rest/v1/tasks";
     public static String CREATE_A_NEW_TASK = URL + "rest/v1/tasks";
 
+    public static String GET_AN_ACTIVE_TASK = URL + "rest/v1/tasks/{id}";
+
     @Step
     public void setGetActiveTask(){
         SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
@@ -28,4 +30,10 @@ public class TodoistTaskAPI {
         SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
                 .contentType(ContentType.JSON).body(json);
     }
+
+    @Step
+    public void setGetAnActiveTask(long id){
+        SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
+                            .pathParam("id", id);
+    };
 }

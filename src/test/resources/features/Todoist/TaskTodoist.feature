@@ -13,3 +13,11 @@ Feature: Task feature
       | content    | date                | priority |
       | "Buy Milk" | "tomorrow at 12:00" | 4        |
 
+  Scenario Outline: Get An Active task
+    Given Get an active task with <id>
+    When Send Get an active task
+    Then Status code should be 200 OK
+    And Respose body should be <id>
+    Examples:
+      | id         |
+      | 6334890386 |
