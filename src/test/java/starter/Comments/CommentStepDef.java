@@ -79,7 +79,7 @@ CommentStepDef {
 
     @And("Validate get comment json schema validator")
     public void validateGetCommentJsonSchemaValidator() {
-        File json = new File(CommentAPI.JSON_SCHEMA+"/GetProjectSchema.json");
+        File json = new File(CommentAPI.JSON_SCHEMA+"/GetCommentSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
