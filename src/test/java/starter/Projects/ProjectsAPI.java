@@ -23,13 +23,13 @@ public class ProjectsAPI {
     public static final String DELETE_PROJECT = URL+"/rest/v1/projects/{id}";
     public static final String GET_ALL_COLLABORATOR = URL+"/rest/v1/projects/{id}/collaborators";
 
-
     //Get All Project Positive Case
     @Step("Get all projects")
     public void getAllProjects() {
         SerenityRest.given()
                 .headers("Authorization", "Bearer "+BEARER_TOKEN);
     }
+
     //Get All Project Negative Case
     @Step("Invalid get all projects")
     public void invalidGetAllProjects() {
