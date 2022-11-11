@@ -3,16 +3,13 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": "string"
-    },
-    "parent_id": {
-      "type": "null"
+      "type": "integer"
     },
     "order": {
       "type": "integer"
     },
     "color": {
-      "type": "string"
+      "type": "integer"
     },
     "name": {
       "type": "string"
@@ -20,37 +17,28 @@
     "comment_count": {
       "type": "integer"
     },
-    "is_shared": {
+    "shared": {
       "type": "boolean"
     },
-    "is_favorite": {
+    "favorite": {
       "type": "boolean"
     },
-    "is_inbox_project": {
-      "type": "boolean"
-    },
-    "is_team_inbox": {
-      "type": "boolean"
+    "sync_id": {
+      "type": "integer"
     },
     "url": {
-      "type": "string"
-    },
-    "view_style": {
       "type": "string"
     }
   },
   "required": [
     "id",
-    "parent_id",
     "order",
     "color",
     "name",
     "comment_count",
-    "is_shared",
-    "is_favorite",
-    "is_inbox_project",
-    "is_team_inbox",
-    "url",
-    "view_style"
+    "shared",
+    "favorite",
+    "sync_id",
+    "url"
   ]
 }

@@ -1,6 +1,6 @@
 Feature: Get All Projects Todoist
   #PositiveCase
-  @Scenario1
+  @PositiveCase
   Scenario: Get all projects todoist
     Given Get all projects valid parameter
     When Send all projects request

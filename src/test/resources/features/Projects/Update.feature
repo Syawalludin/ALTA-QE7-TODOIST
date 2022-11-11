@@ -1,11 +1,10 @@
-Feature: Post Update Project Todoist
+Feature: Update Projects Todoist
   #PositiveCase
-  @Scenario1
+  @PositiveCase
   Scenario Outline: Post update project valid id
     Given Post update project valid id <id>
     When Send post update project request
-    Then Status code is 200 OK
-    And Validate post update project json schema validator
+    Then Status code is 204 No Content
     Examples:
       | id         |
-      | 2302129495 |
+      | 2302207007 |

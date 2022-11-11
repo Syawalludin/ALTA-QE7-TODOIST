@@ -1,6 +1,6 @@
-Feature: Get Project Todoist
+Feature: Get Projects Todoist
   #PositiveCase
-  @Scenario1
+  @PositiveCase
   Scenario Outline: Get project valid id
     Given Get project valid id <id>
     When Send get project request
@@ -8,4 +8,4 @@ Feature: Get Project Todoist
     And Validate get project json schema validator
     Examples:
       | id         |
-      | 2302129495 |
+      | 2302207007 |

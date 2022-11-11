@@ -80,7 +80,7 @@ ProjectsStepDefinitions {
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
-
+    //Update Project
     @Given("Post update project valid id {long}")
     public void postUpdateProjectWithValidJsonId(long id) {
         File json = new File(ProjectsAPI.JSON_REQ_BODY+"/UpdateProject.json");
@@ -101,6 +101,39 @@ ProjectsStepDefinitions {
     @And("Validate post update project json schema validator")
     public void validatePostUpdateProjectJsonSchemaValidator() {
         File json = new File(ProjectsAPI.JSON_SCHEMA+"/UpdateProjectSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
+
+    //Delete Project
+    @Given("Task delete project with id {long}")
+    public void taskDeleteProjectWithIdId(long id) {
+        projectsAPI.deleteProject(id);
+    }
+
+    @When("Send task delete project request")
+    public void sendTaskDeleteProjectRequest() {
+        SerenityRest.when().delete(ProjectsAPI.DELETE_PROJECT);
+    }
+
+    @Then("Status code is {int} No Content")
+    public void statusCodeIsNoContent(int noContent) {
+        SerenityRest.then().statusCode(noContent);
+    }
+
+    @Given("Collaborator project with id {long}")
+    public void collaboratorProjectWithIdId(long id) {
+        projectsAPI.getAllCollaborator(id);
+    }
+
+    @When("Send collaborator project request")
+    public void sendCollaboratorProjectRequest() {
+        SerenityRest.when().delete(ProjectsAPI.GET_ALL_COLLABORATOR);
+    }
+
+
+    @And("Validate collaborator all project json schema validator")
+    public void validateCollaboratorAllProjectJsonSchemaValidator() {
+        File json = new File(ProjectsAPI.JSON_SCHEMA+"/CollaboratorSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 }

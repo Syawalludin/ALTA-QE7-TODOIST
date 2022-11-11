@@ -1,6 +1,6 @@
-Feature: Post Create New Project Todoist
+Feature: Create New Projects Todoist
   #PositiveCase
-  @Scenario1
+  @PositiveCase
   Scenario: Post create new project todoist with json
     Given Post create a valid new project
     When Send post create project request
