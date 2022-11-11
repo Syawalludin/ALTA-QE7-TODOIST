@@ -13,7 +13,7 @@ public class TodoistTaskAPI {
     public static final String DIR = System.getProperty("user.dir");
     public static final String JSON_REG_BODY = DIR + "/src/test/resources/JSON/Requestbody";
     public static final String JSON_SCEMA = DIR + "/src/test/resources/JSON/jsonScema";
-    public static final String BEARER_TOKEN = "9493ffaa6194d2417c1b364cebb48d9232114a9a";
+    public static final String BEARER_TOKEN = "181d382f2da19201acc048d06cc5602ed7a15491";
     public static String GET_ACTIVE_TASK = URL + "rest/v1/tasks";
     public static String CREATE_A_NEW_TASK = URL + "rest/v1/tasks";
     public static String GET_AN_ACTIVE_TASK = URL + "rest/v1/tasks/{id}";
@@ -63,22 +63,5 @@ public class TodoistTaskAPI {
     public void setDELETE(long id){
         SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN )
                             .pathParam("id", id);
-    }
-
-    //Invalid
-    @Step
-    public void setGetActiveTaskinvalid(long id){
-        SerenityRest.given().headers( "Authorization", "Bearer " + BEARER_TOKEN )
-                            .pathParam("id", id);
-    }
-
-
-    @Step("Update a task with invalid parameter")
-    public void setUpdateATaskInvalid(long id, File json){
-        SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
-                .contentType(ContentType.JSON)
-                .body(json)
-                .pathParam("id", id);
-
     }
 }

@@ -22,7 +22,7 @@ public class TaskInvalidStepdefs {
     //Scenario 8
     @Given("Get an active task with invalid {long}")
     public void getAnActiveTaskWithInvalidId(long id) {
-        todoistTaskAPI.setGetActiveTaskinvalid(id);
+        todoistTaskAPI.setGetAnActiveTask(id);
     }
 
     @Then("Status code should be {int} Not Found")
@@ -34,20 +34,22 @@ public class TaskInvalidStepdefs {
     @Given("Update task with json and invalid {long}")
     public void updateTaskWithJsonAndInvalidId(long id) {
         File json = new File(TodoistTaskAPI.JSON_REG_BODY + "/TaskUpdate.json");
-        todoistTaskAPI.setUpdateATaskInvalid(id, json);
+        todoistTaskAPI.setUpdateATask(id, json);
     }
 
-    //Scenario 9
+    //Scenario 10
     @Given("Close A task With invalid {long}")
     public void closeATaskWithInvalidId(long id) {
         todoistTaskAPI.setCloseATask(id);
     }
 
+    //Scenario 11
     @Given("Reopen a task with invalid {long}")
     public void reopenATaskWithInvalidId(long id) {
         todoistTaskAPI.setReopenATask(id);
     }
 
+    //Scenario 12
     @Given("Delete a task with invalid {long}")
     public void deleteATaskWithInvalidId(long id) {
         todoistTaskAPI.setDELETE(id);

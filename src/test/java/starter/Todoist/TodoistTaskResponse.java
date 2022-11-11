@@ -5,5 +5,5 @@ public class TodoistTaskResponse {
     public static final String DATE = "due.string";
     public static final String CONTENT = "content";
     public static final String PRIORITY = "priority";
-    public static final String NOT_FOUND = "NULL";
+
 }
