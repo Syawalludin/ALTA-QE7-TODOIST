@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "color": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "comment_count": {
+          "type": "integer"
+        },
+        "shared": {
+          "type": "boolean"
+        },
+        "favorite": {
+          "type": "boolean"
+        },
+        "sync_id": {
+          "type": "integer"
+        },
+        "inbox_project": {
+          "type": "boolean"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "color",
+        "name",
+        "comment_count",
+        "shared",
+        "favorite",
+        "sync_id",
+        "inbox_project",
+        "url"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "order": {
+          "type": "integer"
+        },
+        "color": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "comment_count": {
+          "type": "integer"
+        },
+        "shared": {
+          "type": "boolean"
+        },
+        "favorite": {
+          "type": "boolean"
+        },
+        "sync_id": {
+          "type": "integer"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "order",
+        "color",
+        "name",
+        "comment_count",
+        "shared",
+        "favorite",
+        "sync_id",
+        "url"
+      ]
+    }
+  ]
+}
