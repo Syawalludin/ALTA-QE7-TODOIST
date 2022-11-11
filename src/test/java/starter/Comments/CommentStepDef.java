@@ -45,14 +45,19 @@ CommentStepDef {
 
 
     //Get All Comments
-    @Given("Get all comments valid parameter {int}")
-    public void getAllCommentsValidParameterId(int id) {
-        commentAPI.getAllComments(id);
+//    @Given("Get all comments valid parameter {int}")
+//    public void getAllCommentsValidParameterId(int id) {
+//        commentAPI.getAllComment();
+//    }
+
+    @Given("Get all comment valid task id")
+    public void getAllCommentValidTaskId() {
+        commentAPI.getAllComment();
     }
 
     @When("Send all comments request")
     public void sendAllComments() {
-        SerenityRest.when().get(CommentAPI.GET_ALL_COMMENTS);
+        SerenityRest.when().get(CommentAPI.GET_ALL_COMMENT);
     }
 
     @Then("Status code is {int} OK")
@@ -123,5 +128,6 @@ CommentStepDef {
     public void statusCodeIsNoContent(int noContent) {
         SerenityRest.then().statusCode(noContent);
     }
+
 
 }

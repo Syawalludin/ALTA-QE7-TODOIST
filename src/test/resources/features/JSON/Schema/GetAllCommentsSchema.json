@@ -1,48 +1,522 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "integer"
-    },
-    "task_id": {
-      "type": "integer"
-    },
-    "content": {
-      "type": "string"
-    },
-    "posted": {
-      "type": "string"
-    },
-    "attachment": {
+  "type": "array",
+  "items": [
+    {
       "type": "object",
       "properties": {
-        "resource_type": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
           "type": "string"
         },
-        "file_url": {
+        "posted": {
           "type": "string"
         },
-        "file_type": {
-          "type": "string"
-        },
-        "file_name": {
-          "type": "string"
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
         }
       },
       "required": [
-        "resource_type",
-        "file_url",
-        "file_type",
-        "file_name"
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "task_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        },
+        "posted": {
+          "type": "string"
+        },
+        "attachment": {
+          "type": "object",
+          "properties": {
+            "file_name": {
+              "type": "string"
+            },
+            "file_type": {
+              "type": "string"
+            },
+            "file_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name",
+            "file_type",
+            "file_url"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "content",
+        "posted",
+        "attachment"
       ]
     }
-  },
-  "required": [
-    "id",
-    "task_id",
-    "content",
-    "posted",
-    "attachment"
   ]
 }

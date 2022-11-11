@@ -13,18 +13,24 @@ public class CommentAPI {
     public static final String JSON_REQ_BODY = DIR+"/src/test/resources/features/JSON/RequestBody";
     public static final String JSON_SCHEMA = DIR+"/src/test/resources/features/JSON/Schema";
     public static final String BEARER_TOKEN = "181d382f2da19201acc048d06cc5602ed7a15491";
-    public static final String GET_ALL_COMMENTS = URL+"/rest/v1/comments?task_id={id}";
+//    public static final String GET_ALL_COMMENTS = URL+"/rest/v1/comments?task_id={id}";
+    public static final String GET_ALL_COMMENT = URL+"/rest/v1/comments?task_id=6336484006";
     public static final String CREATE_NEW_COMMENT = URL+"/rest/v1/comments";
     public static final String GET_COMMENT = URL+"/rest/v1/comments/{id}";
     public static final String UPDATE_COMMENT = URL+"/rest/v1/comments/{id}";
     public static final String DELETE_COMMENT = URL+"/rest/v1/comments/{id}";
 
     //Get All Comments
-    @Step("Get all Comment")
-    public void getAllComments(int id) {
+//    @Step("Get all Comment")
+//    public void getAllComments(int id) {
+//        SerenityRest.given()
+//                .headers("Authorization", "Bearer "+BEARER_TOKEN)
+//                .pathParam("id",id);
+//    }
+    @Step("Get all comment")
+    public void getAllComment(){
         SerenityRest.given()
-                .headers("Authorization", "Bearer "+BEARER_TOKEN)
-                .pathParam("id",id);
+                .headers("Authorization", "Bearer 181d382f2da19201acc048d06cc5602ed7a15491");
     }
 
     //Create New Comment
