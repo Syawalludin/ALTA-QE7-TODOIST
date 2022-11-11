@@ -1,0 +1,10 @@
+{
+  "task_id": 6336484006,
+  "content": "Need one bottle of milk",
+  "attachment": {
+    "resource_type": "file",
+    "file_url": "https://s3.amazonaws.com/domorebetter/Todoist+Setup+Guide.pdf",
+    "file_type": "application/pdf",
+    "file_name": "File.pdf"
+  }
+}
