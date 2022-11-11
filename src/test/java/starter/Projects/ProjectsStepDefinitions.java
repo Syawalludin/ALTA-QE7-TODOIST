@@ -127,7 +127,7 @@ ProjectsStepDefinitions {
 
     @When("Send collaborator project request")
     public void sendCollaboratorProjectRequest() {
-        SerenityRest.when().delete(ProjectsAPI.GET_ALL_COLLABORATOR);
+        SerenityRest.when().get(ProjectsAPI.GET_ALL_COLLABORATOR);
     }
 
 
