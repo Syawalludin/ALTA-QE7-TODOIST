@@ -39,6 +39,23 @@ ProjectsStepDefinitions {
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 
+    //Invalid URL Get All Project
+
+    @Given("Get all projects invalid url")
+    public void getAllProjectsInvalidIdUrl() {
+        projectsAPI.invalidGetAllProjects();
+    }
+
+    @When("Send invalid all projects request")
+    public void sendInvalidAllProjects() {
+        SerenityRest.when().get(ProjectsAPI.INVALID_GET_ALL_PROJECTS);
+    }
+
+    @Then("Status code is {int} Not Found")
+    public void statusCodeIsNotFound(int notFound) {
+        SerenityRest.then().statusCode(notFound);
+    }
+
     //Create New Project Positive Case
     @Given("Post create a valid new project")
     public void postCreateAValidNewProject() {

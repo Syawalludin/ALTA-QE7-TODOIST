@@ -16,17 +16,23 @@ public class ProjectsAPI {
     public static final String BEARER_TOKEN = "1a29eca8f7991cf41a06e51804191c6f61c6f1c2";
 
     public static final String GET_ALL_PROJECTS = URL+"/rest/v1/projects";
-    public static final String CREATE_NEW_PROJECT = URL+"/rest/v1/projects/";
+    public static final String INVALID_GET_ALL_PROJECTS = URL+"/rest/v1/project";
+    public static final String CREATE_NEW_PROJECT = URL+"/rest/v1/projects";
     public static final String GET_PROJECT = URL+"/rest/v1/projects/{id}";
     public static final String UPDATE_PROJECT = URL+"/rest/v1/projects/{id}";
     public static final String DELETE_PROJECT = URL+"/rest/v1/projects/{id}";
     public static final String GET_ALL_COLLABORATOR = URL+"/rest/v1/projects/{id}/collaborators";
 
-//    public static final String GET_ALL_COLLABORATOR = URL+COLLABORATOR+"/collaborators";
 
     //Get All Project Positive Case
     @Step("Get all projects")
     public void getAllProjects() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer "+BEARER_TOKEN);
+    }
+    //Get All Project Negative Case
+    @Step("Invalid get all projects")
+    public void invalidGetAllProjects() {
         SerenityRest.given()
                 .headers("Authorization", "Bearer "+BEARER_TOKEN);
     }
