@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "color": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "comment_count": {
+      "type": "integer"
+    },
+    "shared": {
+      "type": "boolean"
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "sync_id": {
+      "type": "integer"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "order",
+    "color",
+    "name",
+    "comment_count",
+    "shared",
+    "favorite",
+    "sync_id",
+    "url"
+  ]
+}
