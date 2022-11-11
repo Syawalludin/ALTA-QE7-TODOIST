@@ -1,6 +1,6 @@
 Feature: Create New Label Todoist
 
-  @Labels @PositiveCase
+  @Labels
   Scenario: Post create new label todoist with json
     Given Post create a valid new label
     When Send post create label request

@@ -1,6 +1,6 @@
 Feature: Get All Labels Todoist
 
-  @Labels @PositiveCase
+  @Labels
   Scenario: Get all labels
     Given Get all labels valid parameter
     When Send all labels request

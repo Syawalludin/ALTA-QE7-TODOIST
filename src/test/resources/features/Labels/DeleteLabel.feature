@@ -1,6 +1,6 @@
 Feature: Delete Labels Todoist
 
-  @Labels @PositiveCase
+  @Labels
   Scenario Outline: Delete labels with valid id
     Given Task delete label with id <id>
     When Send task delete label request

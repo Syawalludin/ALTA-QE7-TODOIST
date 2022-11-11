@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import starter.Labels.LabelsResponse;
 
 import java.io.File;
 
@@ -29,12 +30,11 @@ CommentStepDef {
         SerenityRest.when().post(CommentAPI.CREATE_NEW_COMMENT);
     }
 
-    @And("Response body should contain name {string}")
-    public void responseBodyShouldContainName(String name) {
+    @And("Response body should contain name Comment {string}")
+    public void responseBodyShouldContainNameComment(String name) {
         SerenityRest.then()
-                .body(CommentResponse.NAME,equalTo(name));
+                .body(CommentResponse.CONTENT, equalTo(name));
     }
-
     @And("Validate create comment json schema validator")
     public void validateCreateCommentJsonSchemaValidator() {
         File json = new File(CommentAPI.JSON_SCHEMA+"/CreateNewCommentSchema.json");
@@ -60,10 +60,6 @@ CommentStepDef {
         SerenityRest.when().get(CommentAPI.GET_ALL_COMMENT);
     }
 
-    @Then("Status code is {int} OK")
-    public void statusCodeIsOK(int OK) {
-        SerenityRest.then().statusCode(OK);
-    }
 
     @And("Validate get all comments json schema validator")
     public void validateGetAllCommentsJsonSchemaValidator() {
@@ -124,10 +120,6 @@ CommentStepDef {
         SerenityRest.when().delete(CommentAPI.DELETE_COMMENT);
     }
 
-    @Then("Status code is {int} No Content")
-    public void statusCodeIsNoContent(int noContent) {
-        SerenityRest.then().statusCode(noContent);
-    }
 
 
 }

@@ -1,6 +1,6 @@
 Feature: Get Label Todoist
 
-  @Labels @PositiveCase
+  @Labels
   Scenario Outline: Get label valid id
     Given Get label valid id <id>
     When Send get label request

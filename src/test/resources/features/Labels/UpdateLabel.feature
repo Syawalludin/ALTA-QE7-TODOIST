@@ -1,6 +1,6 @@
 Feature: Update Labels Todoist
 
-  @Labels @PositiveCase
+  @Labels
   Scenario Outline: Post update label valid id
     Given Post update label valid id <id>
     When Send post update label request

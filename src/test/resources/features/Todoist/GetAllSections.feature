@@ -1,4 +1,4 @@
-Feature: Todoist Feature test
+Feature: Todoist Section Feature test
 
   @Tugas
   Scenario Outline: Get all section with valid project id

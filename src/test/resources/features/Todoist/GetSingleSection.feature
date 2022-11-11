@@ -1,4 +1,4 @@
-Feature: Todoist Feature test
+Feature: Todoist Section Feature test
 
   @Tugas
   Scenario Outline: Get single section with valid id

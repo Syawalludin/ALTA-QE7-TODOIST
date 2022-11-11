@@ -8,4 +8,4 @@ Feature: Get Projects Todoist
     And Validate get project json schema validator
     Examples:
       | id         |
-      | 2302207007 |
+      | 2302250567 |

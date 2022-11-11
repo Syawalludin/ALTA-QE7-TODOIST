@@ -24,10 +24,6 @@ public class GetAllSectionsDef {
     public void sendGetAllSectionRequest() {
         SerenityRest.when().get(TodoistAPI.GET_ALL_SECTION);
     }
-    @Then("Status code should be {int} OK")
-    public void statusCodeShouldBeOK(int OK) {
-        SerenityRest.then().statusCode(OK);
-    }
 
     @And("Validate get all section json schema")
     public void validateGetAllSectionJsonSchema() {

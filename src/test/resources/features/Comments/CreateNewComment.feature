@@ -4,6 +4,6 @@ Feature: Create New Comment Todoist
     Given Post create a valid new comment
     When Send post create comment request
     Then Status code is 200 OK
-    And Response body should contain name "Need one bottle of milk"
+    And Response body should contain name Comment "Need one bottle of milk"
     And Validate create comment json schema validator
 

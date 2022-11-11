@@ -1,4 +1,4 @@
-Feature: Todoist Feature test
+Feature: Todoist Section Feature test
 
   @Tugas
   Scenario Outline: Delete section with id

@@ -7,4 +7,4 @@ Feature: Update Projects Todoist
     Then Status code is 204 No Content
     Examples:
       | id         |
-      | 2302207007 |
+      | 2302250567 |

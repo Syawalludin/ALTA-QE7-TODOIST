@@ -28,10 +28,6 @@ ProjectsStepDefinitions {
         SerenityRest.when().get(ProjectsAPI.GET_ALL_PROJECTS);
     }
 
-    @Then("Status code is {int} OK")
-    public void statusCodeIsOK(int OK) {
-        SerenityRest.then().statusCode(OK);
-    }
 
     @And("Validate get all projects json schema validator")
     public void validateGetAllProjectsJsonSchemaValidator() {
@@ -66,12 +62,6 @@ ProjectsStepDefinitions {
     @When("Send post create project request")
     public void sendPostCreateProjectRequest() {
         SerenityRest.when().post(ProjectsAPI.CREATE_NEW_PROJECT);
-    }
-
-    @And("Response body should contain name {string}")
-    public void responseBodyShouldContainName(String name) {
-            SerenityRest.then()
-                    .body(ProjectsResponse.NAME,equalTo(name));
     }
 
     @And("Validate create project json schema validator")
@@ -115,12 +105,6 @@ ProjectsStepDefinitions {
                 .body(ProjectsResponse.NAME,equalTo(name));
     }
 
-    @And("Validate post update project json schema validator")
-    public void validatePostUpdateProjectJsonSchemaValidator() {
-        File json = new File(ProjectsAPI.JSON_SCHEMA+"/UpdateProjectSchema.json");
-        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
-    }
-
     //Delete Project
     @Given("Task delete project with id {long}")
     public void taskDeleteProjectWithIdId(long id) {
@@ -130,11 +114,6 @@ ProjectsStepDefinitions {
     @When("Send task delete project request")
     public void sendTaskDeleteProjectRequest() {
         SerenityRest.when().delete(ProjectsAPI.DELETE_PROJECT);
-    }
-
-    @Then("Status code is {int} No Content")
-    public void statusCodeIsNoContent(int noContent) {
-        SerenityRest.then().statusCode(noContent);
     }
 
     @Given("Collaborator project with id {long}")

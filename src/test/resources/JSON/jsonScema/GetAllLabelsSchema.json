@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "color": {
+      "type": "string"
+    },
+    "is_favorite": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "order",
+    "color",
+    "is_favorite"
+  ]
+}

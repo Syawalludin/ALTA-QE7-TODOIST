@@ -10,10 +10,10 @@ public class ProjectsAPI {
 
     public static final String URL = "https://api.todoist.com";
     public static final String DIR = System.getProperty("user.dir");
-    public static final String JSON_REQ_BODY = DIR+"/src/test/resources/features/JSON/RequestBody";
-    public static final String JSON_SCHEMA = DIR+"/src/test/resources/features/JSON/Schema";
+    public static final String JSON_REQ_BODY = DIR+"/src/test/resources/JSON/Requestbody";
+    public static final String JSON_SCHEMA = DIR+"/src/test/resources/JSON/jsonScema";
 
-    public static final String BEARER_TOKEN = "1a29eca8f7991cf41a06e51804191c6f61c6f1c2";
+    public static final String BEARER_TOKEN = "9493ffaa6194d2417c1b364cebb48d9232114a9a";
 
     public static final String GET_ALL_PROJECTS = URL+"/rest/v1/projects";
     public static final String INVALID_GET_ALL_PROJECTS = URL+"/rest/v1/project";

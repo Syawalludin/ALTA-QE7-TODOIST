@@ -1,4 +1,4 @@
-Feature: Todoist Feature test
+Feature: Todoist Section Feature test
 
   @Tugas
   Scenario Outline: Post update section with valid json
