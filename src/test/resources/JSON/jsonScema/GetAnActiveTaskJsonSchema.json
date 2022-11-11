@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "assigner": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "section_id": {
+      "type": "integer"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "content": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "label_ids": {
+      "type": "array",
+      "items": {}
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "comment_count": {
+      "type": "integer"
+    },
+    "creator": {
+      "type": "integer"
+    },
+    "created": {
+      "type": "string"
+    },
+    "due": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "string": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "datetime": {
+          "type": "string"
+        },
+        "recurring": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "date",
+        "string",
+        "lang",
+        "datetime",
+        "recurring"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "assigner",
+    "project_id",
+    "section_id",
+    "order",
+    "content",
+    "description",
+    "completed",
+    "label_ids",
+    "priority",
+    "comment_count",
+    "creator",
+    "created",
+    "due",
+    "url"
+  ]
+}
