@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        tags = "@PositiveCase",
+        tags = "@PositiveCase or @NegativeCase",
         plugin = {"pretty"},
         features = "classpath:features"
 

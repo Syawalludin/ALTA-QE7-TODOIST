@@ -8,7 +8,7 @@ Feature: Get All Projects Todoist
     And Validate get all projects json schema validator
 
   @NegativeCase
-  Scenario Outline: Get all projects invalid url
+  Scenario: Get all projects invalid url
     Given Get all projects invalid url
     When Send invalid all projects request
     Then Status code is 404 Not Found
