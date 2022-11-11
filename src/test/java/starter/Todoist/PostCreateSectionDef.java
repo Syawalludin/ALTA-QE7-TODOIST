@@ -17,7 +17,7 @@ public class PostCreateSectionDef {
     @Steps
     TodoistAPI todoistAPI;
 
-    @Given("Post new section with valid json")
+    @Given("Post new section with valid body")
     public void postNewSectionWithValidBody() {
         File json = new File(TodoistAPI.JSON_REQ_BODY + "/PostCreateSection.json");
         todoistAPI.setPostNewSection(json);
@@ -25,32 +25,44 @@ public class PostCreateSectionDef {
 
     @When("Send post new section request")
     public void sendPostNewSectionRequest() {
-        SerenityRest.when().post(TodoistAPI.POST_NEW_SECTION);
+        SerenityRest.when().post(todoistAPI.POST_NEW_SECTION);
     }
 
     @Then("Status code should create be {int} OK")
     public void statusCodeShouldCreateBeOK(int OK) {
-        SerenityRest.then().statusCode(OK);
     }
 
-//    @And("Response body page should contain id {long} and project_id {long} and order {int} and name {string}")
-//    public void responseBodyPageShouldContainIdIdAndProject_idProjectAndOrderOrderAndNameName(Long id, Long project, int order, String name) {
-//        SerenityRest.then().body(TodoistResponses.ID, equalTo(id));
-//        SerenityRest.then().body(TodoistResponses.PROJECT, equalTo(project));
-//        SerenityRest.then().body(TodoistResponses.ORDER, equalTo(order));
-//        SerenityRest.then().body(TodoistResponses.NAME, equalTo(name));
-    @And("Response body page should contain id <id> and project_id <project> and order <order> and name <name>")
-    public void responseBodyPageShouldContainIdIdAndProject_idProjectAndOrderOrderAndNameName(Long id, Long project, int order, String name) {
-        SerenityRest.then().body(TodoistResponses.ID, equalTo(id));
-        SerenityRest.then().body(TodoistResponses.PROJECT, equalTo(project));
-        SerenityRest.then().body(TodoistResponses.ORDER, equalTo(order));
-        SerenityRest.then().body(TodoistResponses.NAME, equalTo(name));
+    @And("Response body page should contain project_id {long} and name {string}")
+    public void responseBodyPageShouldContainProject_idProjectAndNameName(long project, String name) {
+        SerenityRest.then().body(TodoistResponses.PROJECT, equalTo(project))
+                .body(TodoistResponses.NAME, equalTo(name));
     }
-
-
+//    @Given("Post new section with valid body")
+//    public void postNewSectionWithValidBody() {
+//        File json = new File(TodoistAPI.JSON_REQ_BODY + "/PostCreateSection.json");
+//        todoistAPI.setPostNewSection(json);
+//    }
+//
+//    @When("Send post new section request")
+//    public void sendPostNewSectionRequest() {
+//        SerenityRest.when().post(TodoistAPI.POST_NEW_SECTION);
+//    }
+//
+//    @Then("Status code should create be {int} OK")
+//    public void statusCodeShouldCreateBeOK(int OK) {
+//        SerenityRest.then().statusCode(OK);
+//    }
+//
+//    @And("Response body page should contain project_id {long} and name {string}`    ")
+//    public void responseBodyPageShouldContainIdIdAndProject_idProjectAndOrderOrderAndNameName(long project,String name) {
+//
+//        SerenityRest.then().body(TodoistResponses.PROJECT, equalTo(project)).body(TodoistResponses.NAME,equalTo(name));
+//
+//    }
+//
     @And("Validate create section json schema")
     public void validateCreateSectionJsonSchema() {
-        File json = new File(TodoistAPI.JSON_SCHEMA + "CreateSectionSchema.json");
+        File json = new File(TodoistAPI.JSON_SCHEMA + "/CreateSectionSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
     }
 }

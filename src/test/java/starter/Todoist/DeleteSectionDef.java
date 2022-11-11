@@ -4,12 +4,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.core.annotations.Steps;
 
 public class DeleteSectionDef {
 
+    //sekarang coba mb kasi @Steps disini aq lihat
+    @Steps
+
     TodoistAPI todoistAPI;
     @Given("Delete section with valid id {long}")
-    public void deleteSectionWithValidIdId(Long id) {
+    public void deleteSectionWithValidIdId(long id) {
         todoistAPI.setDeleteSection(id);
     }
 

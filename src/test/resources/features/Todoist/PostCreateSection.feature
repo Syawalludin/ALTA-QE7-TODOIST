@@ -1,12 +1,12 @@
 Feature: Todoist Feature test
 
   @Tugas
-  Scenario : Post new section with valid json
-    Given Post new section with valid json
+  Scenario Outline: Post new section with valid body
+    Given Post new section with valid body
     When Send post new section request
     Then Status code should create be 200 OK
-    And Response body page should contain id <id> and project_id <project> and order <order> and name <name>
+    And Response body page should contain project_id <project> and name <name>
     And Validate create section json schema
     Examples:
-      | id        | project    | order | name        |
-      | 106506529 | 2302172069 | 3     | "Groceries" |
+      | project    | name        |
+      | 2302160130 | "Groceries" |

@@ -20,38 +20,35 @@ public class TodoistAPI {
     public static String POST_NEW_SECTION = URL +"/rest/v1/sections";
     public static String POST_UPDATE_SECTION = URL+"/rest/v1/sections/{id}";
     public static String DELETE_SECTION =URL+"/rest/v1/sections/{id}";
-    public static String GET_AN_ACTIVE_TASK= URL+"/rest/v1/sections?project_id={id}";
+
 
     @Step("Get all sections")
-    public void  setGetAllSections(Long id){
+    public void  setGetAllSections(long id){
         SerenityRest.given().headers("Authorization","Bearer "+BEARER_TOKEN)
                 .pathParam("id",id);
     }
     @Step("Get single section")
-    public void setGetSingleSections(Long id){
+    public void setGetSingleSections(long id){
         SerenityRest.given().headers("Authorization","Bearer "+BEARER_TOKEN)
                 .pathParam("id",id);
     }
+
     @Step("Post create new section")
-    public void setPostNewSection (File json){
+    public void setPostNewSection( File json){
         SerenityRest.given().headers("Authorization","Bearer "+BEARER_TOKEN)
-        .contentType(ContentType.JSON).body(json);
+                .contentType(ContentType.JSON).body(json);
+
     }
     @Step("Post update section")
-    public void setPostUpdateSection(Long id, File json){
+    public void setPostUpdateSection(long id, File json){
         SerenityRest.given().headers("Authorization","Bearer "+BEARER_TOKEN)
                 .pathParam("id",id)
                 .contentType(ContentType.JSON).body(json);
     }
     @Step("Delete section")
-    public void setDeleteSection(Long id){
+    public void setDeleteSection(long id){
         SerenityRest.given().headers("Authorization","Bearer "+BEARER_TOKEN)
                 .pathParam("id",id);
     }
-    @Step
-    public void setGetAnActiveTask(Long id){
-        SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
-                .pathParam("id", id);
 
-    }
 }

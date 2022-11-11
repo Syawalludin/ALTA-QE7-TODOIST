@@ -29,27 +29,10 @@ public class GetAllSectionsDef {
         SerenityRest.then().statusCode(OK);
     }
 
-//    @And("Response body page should be <page>")
-//    public void responseBodyPageShouldBePage() {
-//    }
-
-//    @Given("Get an active task with id {long}")
-//    public void getAnActiveTaskWitdIdId(Long id) {
-//        todoistAPI.setGetAnActiveTask(id);
-//    }
-//
-//    @When("Send Get an active tasks")
-//    public void sendGetAnActiveTask() {
-//        SerenityRest.when().get(TodoistAPI.GET_AN_ACTIVE_TASK);
-//    }
-//    @Then("Status code should be {long} OK")
-//    public void statusCodeShouldBeOK(int OK) {
-//        SerenityRest.then().statusCode(OK);
-//    }
-//    @And("Response body should be {long}")
-//    public void responseBodyShouldBeId(Long id) {
-//        SerenityRest.then().body(TodoistResponses.ID, equalTo(id));
-//    }
-//
+    @And("Validate get all section json schema")
+    public void validateGetAllSectionJsonSchema() {
+        File json = new File(TodoistAPI.JSON_SCHEMA+"/GetAllSectionSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(json));
+    }
 
 }
