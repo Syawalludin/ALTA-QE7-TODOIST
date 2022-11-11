@@ -20,13 +20,7 @@ public class CommentAPI {
     public static final String UPDATE_COMMENT = URL+"/rest/v1/comments/{id}";
     public static final String DELETE_COMMENT = URL+"/rest/v1/comments/{id}";
 
-    //Get All Comments
-//    @Step("Get all Comment")
-//    public void getAllComments(int id) {
-//        SerenityRest.given()
-//                .headers("Authorization", "Bearer "+BEARER_TOKEN)
-//                .pathParam("id",id);
-//    }
+    //Get all Comments
     @Step("Get all comment")
     public void getAllComment(){
         SerenityRest.given()
@@ -50,6 +44,7 @@ public class CommentAPI {
                 .pathParam("id",id);
     }
 
+    //Get Comment
     @Step("Update Comment")
     public void updateComment(long id, File json){
         SerenityRest.given()
@@ -59,7 +54,7 @@ public class CommentAPI {
                 .body(json);
     }
 
-    //Delete Project
+    //Delete Comment
     @Step("Delete Comment")
     public void deleteComment(long id) {
         SerenityRest.given()
@@ -67,11 +62,4 @@ public class CommentAPI {
                 .pathParam("id",id);
     }
 
-    //Collaborator Project
-    @Step("Get all collaborator")
-    public void getAllCollaborator(long id) {
-        SerenityRest.given()
-                .headers("Authorization", "Bearer "+BEARER_TOKEN)
-                .pathParam("id",id);
-    }
 }
