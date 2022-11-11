@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "task_id": {
+      "type": "integer"
+    },
+    "content": {
+      "type": "string"
+    },
+    "posted": {
+      "type": "string"
+    },
+    "attachment": {
+      "type": "object",
+      "properties": {
+        "resource_type": {
+          "type": "string"
+        },
+        "file_url": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "file_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "resource_type",
+        "file_url",
+        "file_type",
+        "file_name"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "task_id",
+    "content",
+    "posted",
+    "attachment"
+  ]
+}
