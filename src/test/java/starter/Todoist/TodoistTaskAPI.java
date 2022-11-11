@@ -20,26 +20,27 @@ public class TodoistTaskAPI {
     public static String UPDATE_A_TASK = URL + "rest/v1/tasks/{id}";
     public static String CLOSE_A_TASK = URL + "rest/v1/tasks/{id}/close";
     public static String REOPEN_A_TASK = URL + "rest/v1/tasks/{id}/reopen";
+    public static String DELETE = URL +"rest/v1/tasks/{id}";
 
 
-    @Step
+    @Step("Get Active Task")
     public void setGetActiveTask(){
         SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
                             .get(GET_ACTIVE_TASK);
     }
 
-    @Step
+    @Step("Create a new task")
     public void setCreateANewTask(File json){
         SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
                 .contentType(ContentType.JSON).body(json);
     }
 
-    @Step
+    @Step("Get an active task")
     public void setGetAnActiveTask(long id){
         SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
                             .pathParam("id", id);
     }
-    @Step
+    @Step("Update a task")
     public void setUpdateATask(long id, File json){
         SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
                             .contentType(ContentType.JSON)
@@ -47,15 +48,37 @@ public class TodoistTaskAPI {
                             .pathParam("id", id);
 
     }
-    @Step
+    @Step("Close a task")
     public void setCloseATask(long id){
         SerenityRest.given().headers( "Authorization", "Bearer " + BEARER_TOKEN )
                             .pathParam("id", id);
     }
-
-    @Step
+    @Step("Reopen a task")
     public void setReopenATask(long id){
         SerenityRest.given().headers( "Authorization", "Bearer " + BEARER_TOKEN )
                 .pathParam("id", id);
+    }
+
+    @Step("Delete a Task")
+    public void setDELETE(long id){
+        SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN )
+                            .pathParam("id", id);
+    }
+
+    //Invalid
+    @Step
+    public void setGetActiveTaskinvalid(long id){
+        SerenityRest.given().headers( "Authorization", "Bearer " + BEARER_TOKEN )
+                            .pathParam("id", id);
+    }
+
+
+    @Step("Update a task with invalid parameter")
+    public void setUpdateATaskInvalid(long id, File json){
+        SerenityRest.given().headers("Authorization", "Bearer " + BEARER_TOKEN)
+                .contentType(ContentType.JSON)
+                .body(json)
+                .pathParam("id", id);
+
     }
 }

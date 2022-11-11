@@ -104,6 +104,7 @@ public class TaskStepdefs {
         SerenityRest.then().body(TodoistTaskResponse.CONTENT, equalTo(content));
     }
 
+    //Scenario 5
     @Given("Close A task With {long}")
     public void closeATaskWithId(long id) {
         todoistTaskAPI.setCloseATask(id);
@@ -114,9 +115,10 @@ public class TaskStepdefs {
         SerenityRest.when().post(TodoistTaskAPI.CLOSE_A_TASK);
     }
 
+    //Scenario 6
     @Given("Reopen a task with {long}")
     public void reopenATaskWithId(long id) {
-        todoistTaskAPI.setCloseATask(id);
+        todoistTaskAPI.setReopenATask(id);
     }
 
     @When("Send Reopen A Task")
@@ -124,14 +126,15 @@ public class TaskStepdefs {
         SerenityRest.when().post(TodoistTaskAPI.REOPEN_A_TASK);
     }
 
+    //Scenario 7
     @Given("Delete a task with {long}")
     public void deleteATaskWithId(long id) {
-        todoistTaskAPI.setCloseATask(id);
-
+       todoistTaskAPI.setDELETE(id);
+        ;
     }
 
     @When("Send Delete A task")
     public void sendDeleteATask() {
-        SerenityRest.when().post(TodoistTaskAPI.REOPEN_A_TASK);
+        SerenityRest.when().delete(TodoistTaskAPI.DELETE);
     }
 }
